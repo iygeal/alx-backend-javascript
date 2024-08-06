@@ -1,6 +1,6 @@
 function handleResponseFromAPI(promise) {
   return promise
-    .then((result) => {
+    .then((result) => { // eslint-disable-line
       return {
         status: 200,
         body: 'success',
