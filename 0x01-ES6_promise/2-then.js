@@ -6,7 +6,7 @@ function handleResponseFromAPI(promise) {
         body: 'success',
       };
     })
-    .catch((error) => {
+    .catch((error) => { // eslint-disable-line
       return new Error();
     })
     .finally(() => {
