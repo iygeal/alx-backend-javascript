@@ -13,7 +13,7 @@ export default class HolbertonCourse {
     // Assign the attributes
     this._name = name;
     this._length = length;
-    this._studets = students;
+    this._students = students;
   }
   // Getter and Setter for the name attribute
   get name() {
