@@ -18,6 +18,6 @@ export default class Airport {
 
   // Override the default string representation
   toString() {
-    return this._code;
+    return `[object ${this.code}]`;
   }
 }
