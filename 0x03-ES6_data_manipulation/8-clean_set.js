@@ -1,9 +1,10 @@
 export default function cleanSet(set, startString) {
-  if (startString === undefined || startString.length === 0) {
+  if (!startString || typeof startString !== 'string') {
     return '';
   }
+
   return Array.from(set)
-    .filter((item) => item.startsWith(startString))
+    .filter((item) => item.startsWith(startString) && item !== startString) // Additional safeguard
     .map((item) => item.slice(startString.length))
     .join('-');
 }
