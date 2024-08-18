@@ -7,13 +7,18 @@ interface Teacher {
   [key: string]: any; // allows additional properties with any value
 }
 
+// Directors interface that extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number; // New required property for Directors
+}
+
 // Demonstration
-const teacher3: Teacher = {
+const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
-  fullTimeEmployee: false,
   location: 'London',
-  contract: false, // Additional property not defined in the interface
+  fullTimeEmployee: true,
+  numberOfReports: 17,
 };
 
-console.log(teacher3);
+console.log(director1);
