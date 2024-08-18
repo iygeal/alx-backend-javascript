@@ -25,5 +25,36 @@ const printTeacher: printTeacherFunction = (
   return `${firstName[0]}. ${lastName}`;
 };
 
+// Interface fpr class constructor
+interface StuedentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface for class methods
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Class implementation
+class StudentClass implements StudentClassInterface {
+  private _firstName: string;
+  private _lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this._firstName = firstName;
+    this._lastName = lastName;
+  }
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this._firstName;
+  }
+}
+
 // Demonstration
-console.log(printTeacher('John', 'Doe'));
+const student = new StudentClass('John', 'Doe');
+console.log(student.displayName()); // Should print 'John'
+console.log(student.workOnHomework()); // Should print 'Currently working'
