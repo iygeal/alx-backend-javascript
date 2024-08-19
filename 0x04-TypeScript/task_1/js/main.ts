@@ -26,7 +26,7 @@ const printTeacher: printTeacherFunction = (
 };
 
 // Interface fpr class constructor
-interface StuedentConstructor {
+interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
@@ -56,5 +56,5 @@ class StudentClass implements StudentClassInterface {
 
 // Demonstration
 const student = new StudentClass('John', 'Doe');
-console.log(student.displayName()); // Should print 'John'
-console.log(student.workOnHomework()); // Should print 'Currently working'
+console.log(student.displayName());
+console.log(student.workOnHomework());
