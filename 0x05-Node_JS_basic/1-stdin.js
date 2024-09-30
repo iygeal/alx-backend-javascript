@@ -1,18 +1,25 @@
 // Display the welcome message
 console.log('Welcome to Holberton School, what is your name?');
 
-// Listen to input from stdin
+// Listen for input
 process.stdin.on('data', (data) => {
-  // Convert the input to a string and trim it to remove
-  /// any extra spaces or new lines
+  // Convert input to string and trim extra spaces or newlines
   const name = data.toString().trim();
 
-  // Display the name
+  // Display the user's name
   console.log(`Your name is: ${name}`);
 
-  // Gracefully close the process with a cutom message
-  console.log('This important software is now closing');
-
-  // Exit the process
-  process.exit();
+  // If the input is interactive (entered from the terminal)
+  if (process.stdin.isTTY) {
+    // End the process
+    process.exit();
+  }
 });
+
+// If the input is piped (non-interactive), listen for the 'end' event
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
+});
+
+// Keep the input stream open for interactive use
+process.stdin.resume();
