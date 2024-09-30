@@ -1,0 +1,1 @@
+console.log("Environment variable MY_VAR:", process.env.MY_VAR);
