@@ -1,5 +1,6 @@
-var chai = require('chai');
+const chai = require('chai');
 const calculateNumber = require('./2-calcul_chai');
+const expect = chai.expect;
 
 describe('Tests calculateNumber function with Chai:', function () {
   describe('SUM type:', function () {
@@ -18,6 +19,7 @@ describe('Tests calculateNumber function with Chai:', function () {
     it('should return 0.2 when rounding 1.4 and 4.5', function () {
       expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.be.closeTo(0.2, 0.01);
     });
+
     it('should return "Error" when dividing by 0', function () {
       expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
     });
