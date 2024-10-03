@@ -3,7 +3,7 @@ const app = express();
 
 // Route for GET /
 app.get('/', (req, res) => {
-  res.send('Welcome to the payment system');
+  res.end('Welcome to the payment system');
 });
 
 // Listen on port 7865
