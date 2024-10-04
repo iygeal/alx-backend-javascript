@@ -4,6 +4,7 @@ import StudentsController from '../controllers/StudentsController';
 
 const router = Router();
 
+// Define routes and link them to the appropriate controller methods
 router.get('/', AppController.getHomepage);
 router.get('/students', StudentsController.getAllStudents);
 router.get('/students/:major', StudentsController.getAllStudentsByMajor);
